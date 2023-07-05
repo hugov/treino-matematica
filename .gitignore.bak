@@ -136,12 +136,3 @@ dist
 !.vscode/launch.json
 !.vscode/extensions.json
 .history/*
-
-# Miscellaneous
-/.angular/cache
-.sass-cache/
-/connect.lock
-/coverage
-/libpeerconnection.log
-testem.log
-/typings
