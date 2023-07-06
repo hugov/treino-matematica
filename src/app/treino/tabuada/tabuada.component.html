@@ -1,5 +1,6 @@
+<!-- Modal de Acertos e Erros -->
 <div class="modal fade" id="treinoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">{{messageTitle}}</h5>
@@ -14,16 +15,30 @@
           <h3>{{messageInfo}}</h3>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
-            Terminar treino
-          </button>
-          <button type="button" class="btn btn-primary">
-            Novo treino
-          </button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" (click)="terminarTreino();">Terminar treino</button>
+          <button type="button" class="btn btn-primary" (click)="novoTreino();">Novo treino</button>
         </div>
       </div>
     </div>
 </div>
+
+<!-- Modal de Finalizar Treino -->
+<div class="modal fade" id="finalizarTreino" tabindex="-1" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLongTitle">{{messageTitle}}</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body" #relatorio></div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
 <div class="container">
     <div class="row">
@@ -36,7 +51,7 @@
                     <form class="form" [formGroup]="tabuadaForm" (ngSubmit)="onSubmit(this.tabuadaForm.value)">
                         
                         <div class="form-group">
-                            {{numero1}} x {{numero2}}
+                            {{tabuada.numero1}} x {{this.tabuada.numero2}}
 
                             <label>Resultado</label>
                             <input type="text" class="form-control" formControlName="resultado">
